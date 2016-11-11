@@ -8,34 +8,38 @@ print_title "Starting script php.sh"
 # Install IUS repository
 yum -y install https://centos7.iuscommunity.org/ius-release.rpm
 
-# Install yum-plugin-replace and replace the php packages with php56u packages:
+# Install yum-plugin-replace and replace the php packages with php70u packages:
 # yum install -y yum-plugin-replace
-# yum -y replace --replace-with php56u php
+# yum -y replace --replace-with php70u php
 
-# Install php56u packages
+# Install php70u packages
+# not available (yet?) with PHP 7.0:
+#	php70u-pecl-memcache \ (required for SAML auth)
+#		https://github.com/iuscommunity/wishlist/issues/38
+#	php70u-pspell \ (I don't think this is required for anything)
+# 	php70u-pecl-jsonc \ (may not be required anymore due to JSON module
+#		inclusion in PHP7, ref:
+#		https://github.com/iuscommunity/wishlist/issues/87)
+# 	php70u-intl \ (Not entirely sure we're actually using this)
 yum install -y \
-	php56u \
-	php56u-cli \
-	php56u-common \
-	php56u-devel \
-	php56u-gd \
-	php56u-pecl-memcache \
-	php56u-pspell \
-	php56u-snmp \
-	php56u-xml \
-	php56u-xmlrpc \
-	php56u-mysqlnd \
-	php56u-pdo \
-	php56u-odbc \
-	php56u-pear \
-	php56u-pecl-jsonc \
-	php56u-process \
-	php56u-bcmath \
-	php56u-intl \
-	php56u-opcache \
-	php56u-soap \
-	php56u-mbstring \
-	php56u-mcrypt
+	php70u \
+	php70u-cli \
+	php70u-common \
+	php70u-devel \
+	php70u-gd \
+	php70u-snmp \
+	php70u-xml \
+	php70u-xmlrpc \
+	php70u-mysqlnd \
+	php70u-pdo \
+	php70u-odbc \
+	php70u-pear \
+	php70u-process \
+	php70u-bcmath \
+	php70u-opcache \
+	php70u-soap \
+	php70u-mbstring \
+	php70u-mcrypt
 
 
 #
