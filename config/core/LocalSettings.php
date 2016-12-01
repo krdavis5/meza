@@ -775,7 +775,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 #
 require_once $egExtensionLoader->registerLegacyExtension(
 	"SemanticCompoundQueries",
-	"https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticCompoundQueries.git",
+	"https://github.com/SemanticMediaWiki/SemanticCompoundQueries.git",
 	"REL1_28"
 );
 
