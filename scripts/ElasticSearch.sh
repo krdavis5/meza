@@ -87,7 +87,10 @@ echo "127.0.0.1 meza" >> /etc/hosts
 # Rename the standard config file and link to our custom file
 cd /etc/elasticsearch
 mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch-old.yml
-ln -s "$m_config/core/elasticsearch.yml" /etc/elasticsearch/elasticsearch.yml
+
+# Elasticsearch 2.x appears to not respect this symlink. Need to find a workaround.
+# ln -s "$m_config/core/elasticsearch.yml" /etc/elasticsearch/elasticsearch.yml
+cp "$m_config/core/elasticsearch.yml" /etc/elasticsearch/elasticsearch.yml
 
 # Make directories called out in elasticsearch.yml
 # ref: http://elasticsearch-users.115913.n3.nabble.com/Elasticsearch-Not-Working-td4059398.html
