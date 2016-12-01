@@ -190,8 +190,10 @@ fi
 #   9260e5d       (a sha1 hash)
 #   tags/v0.4.1   (a tag name)
 #   master        (a branch name)
-parsoid_version="master"
-# parsoid_version="dd8e644d320aec076f76da4e2bd70a8527e0dfd8" # closest to MW 1.27 release date of 28 June 2016
+
+# closest to MW 1.27 release date of 28 June 2016, also works for
+# MW 1.28. Need to find latest version working for 1.28
+parsoid_version="dd8e644d320aec076f76da4e2bd70a8527e0dfd8"
 
 phpversion="5.6.14"
 
