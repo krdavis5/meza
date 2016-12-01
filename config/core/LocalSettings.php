@@ -660,7 +660,7 @@ $egExtensionLoader = new ExtensionLoader();
 $egExtensionLoader->load(
 	"ParserFunctions",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/ParserFunctions.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgPFEnableStringFunctions = true;
 
@@ -672,7 +672,7 @@ $wgPFEnableStringFunctions = true;
 require_once $egExtensionLoader->registerLegacyExtension(
 	"StringFunctionsEscaped",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/StringFunctionsEscaped.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -682,7 +682,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 $egExtensionLoader->load(
 	"ExternalData",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/ExternalData.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -692,7 +692,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	"LabeledSectionTransclusion",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/LabeledSectionTransclusion.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -702,7 +702,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	"Cite",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Cite.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgCiteEnablePopups = true;
 
@@ -733,7 +733,7 @@ $egExtensionLoader->load(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"WhoIsWatching",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/WhoIsWatching.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgPageShowWatchingUsers = true;
 
@@ -744,7 +744,7 @@ $wgPageShowWatchingUsers = true;
 $egExtensionLoader->load(
 	"CharInsert",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/CharInsert.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -765,7 +765,7 @@ $egExtensionLoader->load(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"SemanticInternalObjects",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticInternalObjects.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -776,7 +776,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"SemanticCompoundQueries",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticCompoundQueries.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -787,7 +787,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"Arrays",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Arrays.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -808,7 +808,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"AdminLinks",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/AdminLinks.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgGroupPermissions['sysop']['adminlinks'] = true;
 
@@ -819,7 +819,7 @@ $wgGroupPermissions['sysop']['adminlinks'] = true;
 $egExtensionLoader->load(
 	"DismissableSiteNotice",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/DismissableSiteNotice.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -830,7 +830,7 @@ $egExtensionLoader->load(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"BatchUserRights",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/BatchUserRights.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -840,7 +840,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 $egExtensionLoader->load(
 	"HeaderTabs",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/HeaderTabs.git",
-	"REL1_27"
+	"REL1_28"
 );
 $htEditTabLink = false;
 $htRenderSingleTab = true;
@@ -852,7 +852,7 @@ $htRenderSingleTab = true;
 $egExtensionLoader->load(
 	"WikiEditor",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/WikiEditor.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgDefaultUserOptions['usebetatoolbar'] = 1;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
@@ -883,7 +883,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 $egExtensionLoader->load(
 	"SyntaxHighlight_GeSHi",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/SyntaxHighlight_GeSHi.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -915,7 +915,7 @@ $egApprovedRevsAutomaticApprovals = false;
 $egExtensionLoader->load(
 	"InputBox",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/InputBox.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -925,7 +925,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	"ReplaceText",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/ReplaceText.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -935,7 +935,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	"Interwiki",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Interwiki.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgGroupPermissions['sysop']['interwiki'] = true;
 
@@ -980,7 +980,7 @@ $egPendingReviewsEmphasizeDays = 10;
 require_once $egExtensionLoader->registerLegacyExtension(
 	"Variables",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Variables.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -990,7 +990,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 $egExtensionLoader->load(
 	"YouTube",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/YouTube.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -1000,7 +1000,7 @@ $egExtensionLoader->load(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"ContributionScores",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/ContributionScores.git",
-	"REL1_27"
+	"REL1_28"
 );
 // Exclude Bots from the reporting - Can be omitted.
 $wgContribScoreIgnoreBots = true;
@@ -1043,7 +1043,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 // $egExtensionLoader->load(
 // 	"PdfHandler",
 // 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/PdfHandler",
-// 	"REL1_27"
+// 	"REL1_28"
 // );
 // Location of PdfHandler dependencies
 // $wgPdfProcessor = '/usr/bin/gs'; // installed via yum
@@ -1057,7 +1057,7 @@ require_once $egExtensionLoader->registerLegacyExtension(
 $egExtensionLoader->load(
 	"UniversalLanguageSelector",
 	"https://gerrit.wikimedia.org/r/p/mediawiki/extensions/UniversalLanguageSelector.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -1067,7 +1067,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	"VisualEditor",
 	"https://gerrit.wikimedia.org/r/p/mediawiki/extensions/VisualEditor.git",
-	"REL1_27"
+	"REL1_28"
 );
 // Allow read and edit permission for requests from the server (e.g. Parsoid)
 // Ref: https://www.mediawiki.org/wiki/Talk:Parsoid/Archive#Running_Parsoid_on_a_.22private.22_wiki_-_AccessDeniedError
@@ -1117,7 +1117,7 @@ $wgVisualEditorNamespaces = array_merge(
 $egExtensionLoader->load(
 	"Elastica",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git",
-	"REL1_27"
+	"REL1_28"
 );
 
 
@@ -1127,7 +1127,7 @@ $egExtensionLoader->load(
 require_once $egExtensionLoader->registerLegacyExtension(
 	"CirrusSearch",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgSearchType = 'CirrusSearch';
 //$wgCirrusSearchServers = array( 'search01', 'search02' );
@@ -1139,7 +1139,7 @@ $wgSearchType = 'CirrusSearch';
 require_once $egExtensionLoader->registerLegacyExtension(
 	"Echo",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Echo.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgEchoEmailFooterAddress = $wgPasswordSender;
 
@@ -1150,7 +1150,7 @@ $wgEchoEmailFooterAddress = $wgPasswordSender;
 $egExtensionLoader->load(
 	"Thanks",
 	"https://gerrit.wikimedia.org/r/mediawiki/extensions/Thanks.git",
-	"REL1_27"
+	"REL1_28"
 );
 $wgThanksConfirmationRequired = false;
 
@@ -1161,7 +1161,7 @@ $wgThanksConfirmationRequired = false;
 require_once $egExtensionLoader->registerLegacyExtension(
 	'UploadWizard',
 	'https://gerrit.wikimedia.org/r/mediawiki/extensions/UploadWizard',
-	'REL1_27'
+	'REL1_28'
 );
 
 // Needed to make UploadWizard work in IE, see bug 39877
@@ -1215,7 +1215,7 @@ $wgUploadWizardConfig = array(
 $egExtensionLoader->load(
 	'CollapsibleVector',
 	'https://gerrit.wikimedia.org/r/mediawiki/extensions/CollapsibleVector',
-	'REL1_27'
+	'REL1_28'
 );
 
 
@@ -1225,7 +1225,7 @@ $egExtensionLoader->load(
 $egExtensionLoader->load(
 	'Math',
 	'https://gerrit.wikimedia.org/r/mediawiki/extensions/Math.git',
-	'REL1_27'
+	'REL1_28'
 );
 
 $wgMathValidModes[] = 'MW_MATH_MATHJAX'; // Define MathJax as one of the valid math rendering modes
@@ -1245,7 +1245,7 @@ $wgDefaultUserOptions['mathJax'] = true; // Enable the MathJax checkbox option
 // $egExtensionLoader->load(
 // 	'Flow',
 // 	'https://gerrit.wikimedia.org/r/mediawiki/extensions/Flow.git',
-// 	'REL1_27'
+// 	'REL1_28'
 // );
 
 // // only allow sysops to create new flow boards

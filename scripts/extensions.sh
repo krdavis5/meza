@@ -48,7 +48,7 @@ git submodule update --init
 
 # Install Elastica library via composer
 cd "$m_mediawiki/extensions/Elastica"
-composer install
+composer install --no-dev
 
 
 # Install SyntaxHighlight dependencies
@@ -61,7 +61,7 @@ echo -e "\n\n## meza: Install composer-supported extensions"
 cd "$m_mediawiki"
 cmd_profile "START extensions composer require"
 composer require \
-	mediawiki/semantic-media-wiki:~2.4 \
+	mediawiki/semantic-media-wiki:dev-master \
 	mediawiki/semantic-result-formats:~2.0 \
 	mediawiki/sub-page-list:~1.1 \
 	mediawiki/semantic-meeting-minutes:~0.3 \
