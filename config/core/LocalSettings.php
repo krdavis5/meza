@@ -134,6 +134,7 @@ if ( $debug ) {
 	ini_set( 'error_log', "$m_meza/logs/php.log" );
 
 	// MediaWiki Debug Tools
+	$wgShowDBErrorBacktrace = true;
 	$wgShowExceptionDetails = true;
 	$wgDebugToolbar = true;
 	$wgShowDebug = true;
