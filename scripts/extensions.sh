@@ -62,10 +62,18 @@ cd "$m_mediawiki"
 cmd_profile "START extensions composer require"
 composer require \
 	mediawiki/semantic-media-wiki:dev-master \
-	mediawiki/semantic-result-formats:~2.0 \
-	mediawiki/sub-page-list:~1.1 \
-	mediawiki/semantic-meeting-minutes:~0.3 \
-	mediawiki/semantic-maps:~3.2
+	mediawiki/semantic-result-formats:dev-master \
+	mediawiki/sub-page-list:dev-master \
+	mediawiki/semantic-meeting-minutes:dev-master \
+	mediawiki/semantic-maps:dev-master
+
+	# For some reason update.php isn't working with non-"dev-master" versions,
+	# despite some of these having no significant difference between dev-master
+	# mediawiki/semantic-media-wiki:dev-master \
+	# mediawiki/semantic-result-formats:~2.0 \
+	# mediawiki/sub-page-list:~1.1 \
+	# mediawiki/semantic-meeting-minutes:~0.3 \
+	# mediawiki/semantic-maps:~3.2
 cmd_profile "END extensions composer require"
 
 
