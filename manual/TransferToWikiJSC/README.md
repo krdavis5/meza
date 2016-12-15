@@ -15,11 +15,10 @@ Setup
 Do backups
 ----------
 
-1. Run `sudo bash /opt/meza/scripts/backup-and-import.sh`. This is just a wrapper on the backup and the import scripts. The first run (if you don't change `import-config.sh`) will just run for FOD Wiki. This may be necessary at the moment due to the the way extensions are updated.
-2. Update `import-config.sh` to IMPORT_ALL wikis (see commented out portion).
-3. Run `sudo bash /opt/meza/scripts/backup-and-import.sh`.
-4. Run `get.local.config.sh` to grab local config files from wiki.jsc's `/opt/meza/config/local` directory.
-5. Run `sudo bash /opt/meza/scripts/updateExtensions.sh` to update any extensions added from wiki.jsc local config. I think the solution to not having to do this is to add an `updateExtensions.sh` into `import-wikis.sh` to check and make sure any extensions a wiki needs are first present, then update database as required (e.g. `update.php`). Currently just `update.php` is run, so if a wiki tries to `require_once` an extension that's not there it fatal-errors.
+1. Run `sudo bash /opt/meza/scripts/backup-and-import.sh`.
+2. Run `get.local.config.sh` to grab local config files from wiki.jsc's `/opt/meza/config/local` directory.
+  1. You'll need to go into `config/local/postLocalSettings_allWikis.php` and disable SAML authentication. Just put a `false && ` at the beginning of the if-statement so it never enter it.
+3. Run `sudo bash /opt/meza/scripts/updateExtensions.sh` to update any extensions added from wiki.jsc local config.
 
 
 Stuff we'll need to do after we actually are wiki.jsc

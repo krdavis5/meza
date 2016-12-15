@@ -33,8 +33,8 @@ slackwebhook={{INSERT SLACK WEBHOOK OR "n"}}}
 # space-delimited list of wikis you want to import.
 # If you want to import all wikis, do `which_wikis="IMPORT_ALL"`
 # This may or may not be used in multiple scripts
-which_wikis="fod"
-# which_wikis="IMPORT_ALL"
+# which_wikis="fod"
+which_wikis="IMPORT_ALL"
 
 
 # Each run of this script should clone the latest version of the wiki. Removing
