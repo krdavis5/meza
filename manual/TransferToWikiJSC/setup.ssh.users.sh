@@ -39,6 +39,6 @@ vim "/home/$backup_user_name/.ssh/authorized_keys"
 	# THEN: paste id_rsa.pub from root@backup-server into authorized_keys on source
 	# DON'T erase existing keys on wiki.jsc.nasa.gov. Those are for
 
-ssh remotebackupuser@SOURCE-SERVER
+sudo ssh remotebackupuser@SOURCE-SERVER
 	# VERIFY access WITHOUT typing a password
 
