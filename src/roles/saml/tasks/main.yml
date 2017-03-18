@@ -1,0 +1,98 @@
+---
+# Vars required
+#
+# saml_admin
+# saml_password
+# saml_admin_email
+# idp_entity_id
+# sign_on_url
+# logout_url
+# cert_fingerprint
+# sp_entity_id
+# name_id_policy
+# username_attr
+# realname_attr
+# email_attr
+
+
+- name: Ensure SimpleSamlPhp installed
+  git:
+    repo: https://github.com/simplesamlphp/simplesamlphp.git
+    dest: "{{ m_meza }}/simplesamlphp"
+    version: "master"
+  tags:
+    - latest
+
+
+- name: Ensure config files in place
+  template:
+    src: "{{ item.filename }}.j2"
+    dest: "{{ item.dest_path }}/{{ item.filename }}"
+  with_items:
+    - filename: "config.php"
+      dest_path: "/opt/meza/simplesamlphp/config"
+    - filename: "saml20-idp-remote.php"
+      dest_path: "/opt/meza/simplesamlphp/metadata"
+    - filename: "authsources.php"
+      dest_path: "/opt/meza/simplesamlphp/config"
+
+
+- name: Ensure simplesamlphp dependencies in place
+  composer install
+
+
+
+
+
+# Add SimpleSamlPhp alias directive to Apache httpd.conf
+# This inserts the contents of one file (saml_httpd.conf) below a marker
+# in httpd.conf. See link below for more info:
+# http://unix.stackexchange.com/questions/32908/how-to-insert-the-content-of-a-file-into-another-file-before-a-pattern-marker
+# FIXME: httpd.conf should not be modified
+sed -i -e "/ADD SPECIAL CONFIG BELOW/r $m_config/core/template/saml_httpd.conf" "$m_config/core/httpd.conf"
+
+# restart apache
+service httpd restart
+
+
+
+# Setup authsources.php
+
+
+echo -e "\n"
+
+# Clone Extension:SimpleSamlAuth
+# Could use ExtensionLoader to load this here, which in many ways would be better,
+# but it would also mean we'd have to set WIKI=something, and what would that be?
+# It could be "demo", but wiki_demo could be removed. This is easier for now.
+cd "$m_mediawiki/extensions"
+git clone https://github.com/jornane/mwSimpleSamlAuth.git SimpleSamlAuth -b v0.6
+
+# Create a local SAML config file from template file. This file will be used by
+# both MediaWiki (all wikis) and the landing page (and possibly other things in
+# the future). MediaWiki will be aware of this file because it will be required
+# from within SAML-postLocalSettings.php (see below).
+cp "$m_config/core/template/SAMLConfig.php" "$m_config/local/SAMLConfig.php"
+
+# Replace attributes with user input
+sed -r -i "s/username_attr/$username_attr/g;" "$m_config/local/SAMLConfig.php"
+sed -r -i "s/realname_attr/$realname_attr/g;" "$m_config/local/SAMLConfig.php"
+sed -r -i "s/email_attr/$email_attr/g;" "$m_config/local/SAMLConfig.php"
+
+# Create a postLocalSettings_allWikis.php if it doesn't exist
+if [ ! -f "$m_config/local/postLocalSettings_allWikis.php" ]; then
+    echo -e "<?php\n\n" > "$m_config/local/postLocalSettings_allWikis.php"
+fi
+
+# Add SAML-specific settings to postLocalSettings_allWikis.php
+cat "$m_config/core/template/SAML-postLocalSettings.php" >> "$m_config/local/postLocalSettings_allWikis.php";
+
+# Add these lines to the bottom of preLocalSettings_allWikis.php, then remove the temp file
+# these disable account creation for users
+if [ ! -f "$m_config/local/preLocalSettings_allWikis.php" ]; then
+    echo -e "<?php\n\n" > "$m_config/local/preLocalSettings_allWikis.php"
+fi
+cat "$m_config/core/template/SAML-preLocalSettings.php" >> "$m_config/local/preLocalSettings_allWikis.php";
+
+
+echo "Complete with SAML setup"

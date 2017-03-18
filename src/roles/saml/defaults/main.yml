@@ -1,0 +1,19 @@
+---
+
+saml_secret:
+  # generate a crypto salt
+  salt: $(tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo)
+  adminpassword: adminpass
+
+
+saml_public:
+  technicalcontact_name: Administrator
+  technicalcontact_email: admin@example.com
+
+  # No defaults?
+  # sp_entity_id
+  # idp_entity_id
+  # name_id_policy
+  # single_sign_on_service:
+  # single_logout_service:
+  # cert_fingerprint:
